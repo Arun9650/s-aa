@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react";
 // import { Badge } from "@/components/ui/badge"
-import { TaskModal } from "./proposal-modal"
+import { TaskModal } from "./proposal-modal";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface TaskCardProps {
   title: string;
@@ -14,13 +14,13 @@ interface TaskCardProps {
 }
 
 export function TaskCard({ title, description, status, dueDate, assignee }: TaskCardProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const statusColor = {
-    "Todo": "bg-yellow-500",
+    Todo: "bg-yellow-500",
     "In Progress": "bg-blue-500",
-    "Completed": "bg-green-500"
-  }[status]
+    Completed: "bg-green-500",
+  }[status];
 
   return (
     <>
@@ -29,7 +29,7 @@ export function TaskCard({ title, description, status, dueDate, assignee }: Task
           <CardTitle className="text-sm font-medium">{title}</CardTitle>
           {/* <Badge className={statusColor}>
             </Badge> */}
-            {status}
+          {status}
         </CardHeader>
         <CardContent>
           <p className="text-xs text-muted-foreground">{description}</p>
@@ -45,6 +45,5 @@ export function TaskCard({ title, description, status, dueDate, assignee }: Task
         assignee={assignee}
       />
     </>
-  )
+  );
 }
-

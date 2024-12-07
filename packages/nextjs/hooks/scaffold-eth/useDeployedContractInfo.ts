@@ -14,7 +14,7 @@ export const useDeployedContractInfo = <TContractName extends ContractName>(cont
   // console.log("🚀 ~ useDeployedContractInfo ~ targetNetwork:", targetNetwork);
   const deployedContract = contracts?.[targetNetwork.id]?.[contractName as ContractName] as Contract<TContractName>;
   // console.log("🚀 ~ useDeployedContractInfo ~ contracts:", contracts);
- 
+
   const [status, setStatus] = useState<ContractCodeStatus>(ContractCodeStatus.LOADING);
   const publicClient = usePublicClient({ chainId: targetNetwork.id });
 

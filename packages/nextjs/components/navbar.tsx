@@ -1,25 +1,24 @@
 "use client";
 
-import { useState } from "react"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 // import Search  from 'react-icons/go'
 import { useAccount, useLogout, useSignerStatus } from "@alchemy/aa-alchemy/react";
-import { accountType } from "~~/services/web3/wagmiConfig";
 import { getShortenAddress } from "~~/lib/utils";
+import { accountType } from "~~/services/web3/wagmiConfig";
 
 export function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
 
-  const {  isConnected } = useSignerStatus();
+  const { isConnected } = useSignerStatus();
   const { address } = useAccount({ type: accountType });
   const { logout } = useLogout();
   const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     // Implement search functionality here
-    console.log("Searching for:", searchQuery)
-  }
-
+    console.log("Searching for:", searchQuery);
+  };
 
   return (
     <nav className="bg-background border-b">
@@ -40,22 +39,21 @@ export function Navbar() {
               placeholder="Search tasks..."
               className="pl-8"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={e => setSearchQuery(e.target.value)}
             />
           </div>
         </form>
-        {
-            isConnected && (
-                <div className="flex gap-2">
+        {isConnected && (
+          <div className="flex gap-2">
             {address && <Button variant="outline">{getShortenAddress(address)}</Button>}
-            
-                <Button onClick={() => logout()} variant="outline">logout</Button>
-                </div>
-            )
-        }
+
+            <Button onClick={() => logout()} variant="outline">
+              logout
+            </Button>
+          </div>
+        )}
         {/* <Button variant="outline">Login</Button> */}
       </div>
     </nav>
-  )
+  );
 }
-

@@ -14,3 +14,16 @@ datasource db {
 }
 
 
+
+
+model organization {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  logo       String?
+  daocontract String
+  email      String
+  walletAddress String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

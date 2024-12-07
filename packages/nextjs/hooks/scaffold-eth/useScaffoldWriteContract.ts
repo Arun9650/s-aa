@@ -72,11 +72,11 @@ export const useScaffoldWriteContract = <TContractName extends ContractName>(con
         });
         console.log("🚀 ~ constmakeWriteWithParams: ~ data:", data);
 
-        console.log( {
+        console.log({
           target: deployedContractData.address,
           value: BigInt(variables.value || 0),
           data,
-        })
+        });
         const uo = await sendUserOperationAsync({
           uo: {
             target: deployedContractData.address,
@@ -91,7 +91,7 @@ export const useScaffoldWriteContract = <TContractName extends ContractName>(con
 
       return writeTxResult;
     } catch (e: any) {
-      console.log("🚀 ~ useScaffoldWriteContract ~ e:", e)
+      console.log("🚀 ~ useScaffoldWriteContract ~ e:", e);
       throw e;
     } finally {
       setIsMining(false);

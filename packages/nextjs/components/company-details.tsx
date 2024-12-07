@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 export function CompanyDetails() {
   return (
@@ -9,11 +9,7 @@ export function CompanyDetails() {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex justify-center">
-          <img
-            alt="Company Logo"
-            className="h-20 w-20"
-            src="/placeholder.svg?height=80&width=80"
-          />
+          <img alt="Company Logo" className="h-20 w-20" src="/placeholder.svg?height=80&width=80" />
         </div>
         <div className="space-y-2">
           <Label>Wallet Address</Label>
@@ -31,6 +27,5 @@ export function CompanyDetails() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
-
