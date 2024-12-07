@@ -5,6 +5,7 @@ import { useSignerStatus } from "@alchemy/aa-alchemy/react";
 import MoonLoader from "react-spinners/MoonLoader";
 import Login from "~~/components/cards/Login";
 import { Grid } from "~~/components/cards/Profile";
+import Link from "next/link";
 
 const Home = () => {
   // loading - waiting for a request to resolve
@@ -22,6 +23,12 @@ const Home = () => {
       ) : (
         <Login />
       )}
+      <Link href="/somedynamicpage">
+      somedynamic
+      </Link>
+      <Link href={"/explore"}>
+      explore
+      </Link>
     </div>
   );
 };

@@ -26,18 +26,15 @@ export const Grid = () => {
   const mintAmount = 10;
   const user = useUser();
   const { address } = useAccount({ type: accountType });
-  // console.log("🚀 ~ Grid ~ address:", address);
   const { logout } = useLogout();
   const { data: balance, refetch } = useScaffoldReadContract({
     contractName: "AAAuthToken",
     functionName: "balanceOf",
     args: [address],
   });
-  // console.log("🚀 ~ Grid ~ balance:", balance)
   const { data: AAAuthToken } = useScaffoldContract({
     contractName: "AAAuthToken",
   });
-  // console.log("🚀 ~ Grid ~ AAAuthToken:", AAAuthToken);
   const { writeContractAsync, isMining } = useScaffoldWriteContract("AAAuthToken");
 
   const formSchema = z.object({
