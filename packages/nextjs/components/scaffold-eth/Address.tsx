@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Address as AddressType, getAddress, isAddress } from "viem";
 import { hardhat } from "viem/chains";
-import { CheckCircleIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+import { CheckCircleIcon } from "@heroicons/react/24/outline";
 import { BlockieAvatar } from "~~/components/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
 import { getBlockExplorerAddressLink } from "~~/utils/scaffold-eth";
@@ -81,22 +80,7 @@ export const Address = ({ address, disableAddressLink, size = "base" }: AddressP
           className="ml-1.5 text-xl font-normal text-sky-600 h-5 w-5 cursor-pointer"
           aria-hidden="true"
         />
-      ) : (
-        <CopyToClipboard
-          text={checkSumAddress}
-          onCopy={() => {
-            setAddressCopied(true);
-            setTimeout(() => {
-              setAddressCopied(false);
-            }, 800);
-          }}
-        >
-          <DocumentDuplicateIcon
-            className="ml-1.5 text-xl font-normal text-sky-600 h-5 w-5 cursor-pointer"
-            aria-hidden="true"
-          />
-        </CopyToClipboard>
-      )}
+      ) : null}
     </div>
   );
 };

@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React from "react";
 import { useSignerStatus } from "@alchemy/aa-alchemy/react";
 import MoonLoader from "react-spinners/MoonLoader";
 import Login from "~~/components/cards/Login";

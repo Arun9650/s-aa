@@ -17,22 +17,7 @@ export const TxReceipt = (
             className="ml-1.5 text-xl font-normal text-sky-600 h-5 w-5 cursor-pointer"
             aria-hidden="true"
           />
-        ) : (
-          <CopyToClipboard
-            text={displayTxResult(txResult) as string}
-            onCopy={() => {
-              setTxResultCopied(true);
-              setTimeout(() => {
-                setTxResultCopied(false);
-              }, 800);
-            }}
-          >
-            <DocumentDuplicateIcon
-              className="ml-1.5 text-xl font-normal text-sky-600 h-5 w-5 cursor-pointer"
-              aria-hidden="true"
-            />
-          </CopyToClipboard>
-        )}
+        ) : null}
       </div>
       <div className="flex-wrap collapse collapse-arrow">
         <input type="checkbox" className="min-h-0 peer" />

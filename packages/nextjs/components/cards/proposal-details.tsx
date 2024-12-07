@@ -16,11 +16,11 @@ interface TaskCardProps {
 export function TaskCard({ title, description, status, dueDate, assignee }: TaskCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const statusColor = {
-    Todo: "bg-yellow-500",
-    "In Progress": "bg-blue-500",
-    Completed: "bg-green-500",
-  }[status];
+  // const statusColor = {
+  //   Todo: "bg-yellow-500",
+  //   "In Progress": "bg-blue-500",
+  //   Completed: "bg-green-500",
+  // }[status];
 
   return (
     <>
