@@ -21,7 +21,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="bg-background border-b">
+    <nav className="bg-background border-b bg-black text-white">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-4">
           {/* <img

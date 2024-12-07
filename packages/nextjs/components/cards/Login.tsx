@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useAuthenticate, useSignerStatus } from "@alchemy/aa-alchemy/react";
@@ -69,14 +69,14 @@ const Login = () => {
   }
 
   return (
-    <Card className="w-[21rem] md:w-96">
+    <Card className="w-[90%] mx-auto">
       <CardHeader>
         <CardTitle>{isAwaitingEmail ? "Waiting..." : "Login now"}</CardTitle>
         <CardDescription>
           {isAwaitingEmail ? "We have sent you an email to authenticate." : "Experience the Embedded Accounts!"}
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="border h-full">
         {isAwaitingEmail ? (
           <div className="flex flex-col items-center space-y-6">
             <Image src={"/email.svg"} alt="Email" width={100} height={100} className="w-40" />
@@ -85,8 +85,10 @@ const Login = () => {
             </Link>
           </div>
         ) : (
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          
+          <Form {...form} >
+            <form onSubmit={form.handleSubmit(onSubmit)} className="h-full space-y-14" >
+                     <div className="grid grid-cols-2 gap-8">
               <FormField
                 control={form.control}
                 name="email"
@@ -166,7 +168,8 @@ const Login = () => {
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+        </div>
+              <Button className="w-full py-6 " type="submit">Submit</Button>
             </form>
           </Form>
         )}
